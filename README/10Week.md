@@ -5,6 +5,7 @@
 action의 멀티플레이 정상작동 확인
 
 캐릭터 흐름도 작성
+![캐릭터_흐름도](https://github.com/user-attachments/assets/bf89533d-3cc2-4367-9fbe-18170f3df8e2)
 
 위 사항 중 이동을 구현
 
