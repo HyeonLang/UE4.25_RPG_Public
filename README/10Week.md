@@ -1,6 +1,6 @@
 # UE4.25_RPG
 
-9주차 구현
+10주차 구현
 
 action의 멀티플레이 정상작동 확인
 
@@ -8,6 +8,10 @@ action의 멀티플레이 정상작동 확인
 ![캐릭터_흐름도](https://github.com/user-attachments/assets/bf89533d-3cc2-4367-9fbe-18170f3df8e2)
 
 위 사항 중 이동을 구현
+
+대쉬, 스프린트, 점프 구현
+
+Weapon class 및 장리캐릭터의 Weapon을 구현
 
 다음주차 구현
 
