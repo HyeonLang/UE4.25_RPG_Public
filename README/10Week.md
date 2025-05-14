@@ -31,14 +31,14 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-# 🎮 게임 프로젝트 기술 이슈 및 해결 기록
+## 🎮 게임 프로젝트 기술 이슈 및 해결 기록
 
 이 문서는 개발 중 마주한 주요 버그 및 문제 상황, 그 해결 방법과 고찰을 정리한 기술 보고입니다.
 면접관 또는 개발자 분들이 빠르게 문제 해결 능력과 프로젝트 이해도를 확인할 수 있도록 구성했습니다.
 
 ---
 
-## 📌 IK 이슈: Skeletal Mesh 구조 불일치로 인한 IK 실패
+### 📌 IK 이슈: Skeletal Mesh 구조 불일치로 인한 IK 실패
 
 * **상태**: ❌ 해결 불가 (보류)
 * **원인**: 캐릭터 발 본 방향이 언리얼 기본 마네킹과 반대 → IK 적용 시 발 위치가 머리 위로 이동
@@ -47,7 +47,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 외곽선 이슈: Outline Mesh와 본 Mesh의 애니메이션 불일치
+### 📌 외곽선 이슈: Outline Mesh와 본 Mesh의 애니메이션 불일치
 
 * **상태**: ❌ 해결 불가
 * **원인**: Outline용 MeshComponent에 애니메이션 적용 시 위치 어긋남 발생
@@ -56,7 +56,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 인벤토리 이슈: TMap 및 UObject 리플리케이션 문제
+### 📌 인벤토리 이슈: TMap 및 UObject 리플리케이션 문제
 
 * **상태**: ✅ 해결됨
 * **원인**: `TMap`은 Replicate 불가, `UObject`는 RPC 미지원
@@ -65,7 +65,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 카메라 이슈: BeginPlay 시 카메라 빙의 실패
+### 📌 카메라 이슈: BeginPlay 시 카메라 빙의 실패
 
 * **상태**: ✅ 해결됨
 * **원인**: `bAutoManageActiveCameraTarget`로 인한 자동 빙의 충돌
@@ -74,7 +74,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 DB 이슈: 간헐적 접속 실패
+### 📌 DB 이슈: 간헐적 접속 실패
 
 * **상태**: ✅ 해결됨
 * **원인**: MySQL C++ 커넥터의 연결 불안정 문제
@@ -83,7 +83,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 UI 이슈: UI와 데이터 생성 타이밍 불일치
+### 📌 UI 이슈: UI와 데이터 생성 타이밍 불일치
 
 * **상태**: ✅ 해결됨
 * **원인**: UI가 데이터 생성보다 먼저 실행되어 null 접근 발생
@@ -92,7 +92,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 미니맵 이슈: RenderTarget 공유 및 렌더링 문제
+### 📌 미니맵 이슈: RenderTarget 공유 및 렌더링 문제
 
 * **상태**: ✅ 해결됨
 * **원인**: `TextureRenderTarget2D` 공유로 마지막 클라이언트가 덮어씀
@@ -101,7 +101,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 액션 이슈: 공중 몽타주 동작 실패
+### 📌 액션 이슈: 공중 몽타주 동작 실패
 
 * **상태**: ✅ 해결됨
 * **원인**: 루트모션 적용 조건인 Flying 상태 미설정
@@ -110,7 +110,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 Blueprint 이슈: NativeEvent와 TArray 레퍼런스 호환성
+### 📌 Blueprint 이슈: NativeEvent와 TArray 레퍼런스 호환성
 
 * **상태**: ✅ 해결됨
 * **원인**: `TArray&`는 `BlueprintNativeEvent`에서 블루프린트 미지원
@@ -119,7 +119,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 UObject Tick 이슈: 오브젝트 기반 Tick 비효율
+### 📌 UObject Tick 이슈: 오브젝트 기반 Tick 비효율
 
 * **상태**: ✅ 해결됨
 * **원인**: `UObject`는 Tick 미지원으로 지속 처리 어려움
@@ -128,7 +128,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 Icon 이슈: SoftReference 이미지 로딩 실패
+### 📌 Icon 이슈: SoftReference 이미지 로딩 실패
 
 * **상태**: ✅ 해결됨
 * **원인**: `SetBrushFromSoftTexture`에 SoftReference 직접 사용 시 로딩 안됨
@@ -137,7 +137,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 멀티플레이 이슈: 클라이언트 동기화 실패
+### 📌 멀티플레이 이슈: 클라이언트 동기화 실패
 
 * **상태**: ✅ 해결됨
 * **원인**: 서버 실행 중 클라이언트 접속 시 자동 리플리케이션 누락
@@ -146,7 +146,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 OnRep 이슈: 서버에서 OnRep 미동작
+### 📌 OnRep 이슈: 서버에서 OnRep 미동작
 
 * **상태**: ✅ 해결됨
 * **원인**: `OnRep` 함수는 클라이언트에서만 자동 실행
@@ -155,7 +155,7 @@ gamemode : 멀티플레이를 위한 리슨서버 구현 및 rpc, replicate 설�
 
 ---
 
-## 📌 카메라 연출 이슈: 캐릭터 중심 시네마틱 카메라 구현
+### 📌 카메라 연출 이슈: 캐릭터 중심 시네마틱 카메라 구현
 
 * **상태**: ✅ 해결됨
 * **원인**: 레벨 시퀀서가 월드 기준 Transform으로 캐릭터 기준 연출 실패
